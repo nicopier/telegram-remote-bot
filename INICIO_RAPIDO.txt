@@ -1,0 +1,63 @@
+🚀 INICIO RÁPIDO - BOT DE CAPTURA DE PANTALLA
+
+═══════════════════════════════════════════════════════════════
+
+PASO 1: OBTENER TOKEN DE TELEGRAM
+─────────────────────────────────
+1. Abre Telegram
+2. Busca: @BotFather
+3. Envía: /newbot
+4. Copia el TOKEN que te proporciona (algo como: 123456:ABC-DEF...)
+
+═══════════════════════════════════════════════════════════════
+
+PASO 2: CONFIGURAR EL BOT
+─────────────────────────
+Opción A (Más fácil):
+1. Haz clic en: instalar.bat
+2. Espera a que termine
+3. Abre bot.py con un editor de texto
+4. Busca: TOKEN = "TU_TOKEN_AQUI"
+5. Reemplaza con tu token
+6. Guarda (Ctrl+S)
+
+Opción B (Más segura):
+1. Renombra .env.example a .env
+2. Abre .env
+3. Reemplaza TU_TOKEN_AQUI con tu token
+4. Haz doble clic en bot.py para ejecutar
+
+═══════════════════════════════════════════════════════════════
+
+PASO 3: EJECUTAR EL BOT
+──────────────────────
+- Haz doble clic en: ejecutar.bat
+- O en una PowerShell/CMD: python bot.py
+
+Deberías ver: ✅ Bot ejecutándose correctamente
+
+═══════════════════════════════════════════════════════════════
+
+PASO 4: USAR EL BOT
+──────────────────
+En Telegram:
+1. Busca tu bot (por el username que creaste en BotFather)
+2. Envía: /screenshot
+
+¡Eso es todo! El bot te enviará una captura de tu pantalla.
+
+═══════════════════════════════════════════════════════════════
+
+COMANDOS DISPONIBLES:
+/start      - Mensaje de bienvenida
+/screenshot - Toma una captura de pantalla
+/help       - Muestra los comandos
+
+═══════════════════════════════════════════════════════════════
+
+❓ AYUDA:
+- Si el bot no responde: asegúrate que ejecutar.bat sigue abierto
+- Si hay error de módulo: ejecuta instalar.bat de nuevo
+- Si no encuentra el bot en Telegram: búscalo por USERNAME (debe terminar en _bot)
+
+═══════════════════════════════════════════════════════════════
