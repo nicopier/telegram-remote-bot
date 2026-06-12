@@ -12,7 +12,7 @@ echo Instalando tarea de inicio automatico...
 echo Python: %PYTHON_PATH%
 echo Bot: %BOT_PATH%
 
-schtasks /create /tn "TelegramBot" /tr "\"%PYTHON_PATH%\" \"%BOT_PATH%\"" /sc onlogon /rl highest /f
+schtasks /create /tn "TelegramBot" /tr "\"%PYTHON_PATH%\" \"%BOT_PATH%\"" /sc onlogon /rl highest /ru "%USERNAME%" /f
 
 if %ERRORLEVEL% == 0 (
     echo.

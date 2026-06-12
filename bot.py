@@ -773,14 +773,29 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
     # Apagar / reiniciar / suspender
     elif data == "confirm_apagar":
-        await query.edit_message_text("🔴 Apagando la PC...")
-        os.system("shutdown /s /t 3")
+        try:
+            await query.edit_message_text("🔴 Apagando la PC...")
+            ret = os.system("shutdown /s /t 3")
+            if ret != 0:
+                await query.message.reply_text(f"❌ El comando shutdown falló (código {ret}). Verificá que el bot corra como administrador.")
+        except Exception as e:
+            await query.message.reply_text(f"❌ Error al apagar: {e}")
     elif data == "confirm_reiniciar":
-        await query.edit_message_text("🔁 Reiniciando la PC...")
-        os.system("shutdown /r /t 3")
+        try:
+            await query.edit_message_text("🔁 Reiniciando la PC...")
+            ret = os.system("shutdown /r /t 3")
+            if ret != 0:
+                await query.message.reply_text(f"❌ El comando shutdown falló (código {ret}). Verificá que el bot corra como administrador.")
+        except Exception as e:
+            await query.message.reply_text(f"❌ Error al reiniciar: {e}")
     elif data == "confirm_suspender":
-        await query.edit_message_text("💤 Suspendiendo la PC...")
-        ctypes.windll.PowrProf.SetSuspendState(0, 1, 0)
+        try:
+            await query.edit_message_text("💤 Suspendiendo la PC...")
+            ret = ctypes.windll.PowrProf.SetSuspendState(0, 0, 0)
+            if ret == 0:
+                await query.message.reply_text("❌ No se pudo suspender la PC. Verificá que el bot corra como administrador.")
+        except Exception as e:
+            await query.message.reply_text(f"❌ Error al suspender: {e}")
     elif data == "cancelar":
         await query.edit_message_text("✅ Cancelado.")
 
